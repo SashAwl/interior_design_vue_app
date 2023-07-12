@@ -13,6 +13,11 @@
     padding-top: 44px;
     padding-bottom: 44px;
 
+    &__logo {
+        display: flex;
+        align-items: center;
+    }
+
     &__logo>span {
         color: $colorHeading;
         font-family: $fontSerif;
@@ -90,7 +95,7 @@
             }
 
             &[path] {
-                fill: #CDA274;
+                fill: $colorBeige;
             }
         }
     }
@@ -258,7 +263,6 @@
                 font-weight: 400;
                 line-height: 125%;
                 letter-spacing: 0.5px;
-                margin: 0;
                 width: 305px;
             }
 
@@ -300,7 +304,7 @@
 
         span~span,
         svg {
-            border: 1px solid #CDA274;
+            border: 1px solid $colorBeige;
             margin-left: 20px;
         }
 
@@ -342,7 +346,6 @@
         font-weight: 400;
         letter-spacing: 0.22px;
         list-style-type: none;
-        margin: 0;
         padding: 0;
         width: 258px;
 
@@ -374,4 +377,141 @@
     background-size: cover;
     background-repeat: no-repeat;
     height: 345px;
+}
+
+.full-articles {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 52px;
+    margin-top: 100px;
+
+    .articles__list-item {
+
+        .item__heading {
+            color: $colorHeading;
+            font-size: 50px;
+            font-family: $fontSerif;
+            font-weight: 400;
+            line-height: 125%;
+            letter-spacing: 1px;
+            margin: 0;
+        }
+
+        .item__text {
+            color: $colorText;
+            font-size: 22px;
+            font-family: $fontSansSerif;
+            font-weight: 400;
+            line-height: 150%;
+            letter-spacing: 0.22px;
+
+            ol {
+                color: $colorBeige;
+
+                li~li {
+                    margin-top: 24px;
+                }
+
+                span {
+                    color: $colorText;
+                }
+            }
+        }
+
+        .item__nav {
+            display: flex;
+            justify-content: space-between;
+            font-size: 16px;
+        }
+
+        .item__nav-link>a {
+            text-decoration: none;
+            color: $colorText;
+        }
+
+        .item__img {
+            border-radius: 60px;
+            width: 100%;
+            margin-top: 14px;
+            margin-bottom: 14px;
+        }
+
+        .item__high-text {
+            border-radius: 50px;
+            background: #F4F0EC;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 47px;
+            margin-bottom: 47px;
+
+
+            .text-block {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                color: $colorBeige;
+                text-align: center;
+                font-size: 25px;
+                font-family: $fontSerif;
+                font-style: italic;
+                font-weight: 400;
+                letter-spacing: 0.5px;
+                gap: 10px;
+                width: 354px;
+                padding-bottom: 53px;
+
+                &>p:first-child {
+                    font-size: 200px;
+                    letter-spacing: 4px;
+                    margin-bottom: -165px;
+                    margin-top: 0;
+                }
+            }
+        }
+    }
+
+    .articles__list-item~.articles__list-item {
+        margin-top: 130px;
+    }
+
+    .full-articles__tegs {
+        .tegs__heading {
+            color: $colorHeading;
+            font-size: 25px;
+            font-family: $fontSerif;
+            font-weight: 400;
+            line-height: 125%;
+            letter-spacing: 0.5px;
+            margin-top: 0;
+            margin-bottom: 24px;
+        }
+
+        .full-articles__tegs-block {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+
+            &-item {
+                color: $colorHeading;
+                text-align: center;
+                font-size: 18px;
+                font-family: $fontSansSerif;
+                font-weight: 400;
+                line-height: 125%;
+                letter-spacing: 0.36px;
+                border: none;
+                border-radius: 10px;
+                background: #F4F0EC;
+                padding: 9px 30px;
+                cursor: pointer;
+            }
+        }
+
+        .cheked-teg {
+            background-color: #292F36;
+        }
+    }
 }

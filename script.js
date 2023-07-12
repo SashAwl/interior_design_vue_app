@@ -11,3 +11,35 @@ const app = new Vue({
         ]
     }
 })
+
+const appArticles = new Vue({
+    el: '#appArticles',
+    data: {
+        articlesFull: [
+            { name: 'article-full-kitchen', teg: 'Kitchen' },
+            { name: 'article-full-planning-kitchen', teg: 'Kitchen Planning' },
+            { name: 'article-full-architecture', teg: 'Architecture' },
+            { name: 'article-full-building', teg: 'Building' },
+            { name: 'article-full-bedroom', teg: 'Bedroom' },
+            { name: 'article-full-bedroom2', teg: 'Bedroom' }
+        ],
+        tegs: ['Kitchen', 'Bedroom', 'Building', 'Architecture', 'Kitchen Planning', 'All'],
+        filter: [
+            { name: 'article-full-kitchen', teg: 'Kitchen' },
+            { name: 'article-full-planning-kitchen', teg: 'Kitchen Planning' },
+            { name: 'article-full-architecture', teg: 'Architecture' },
+            { name: 'article-full-building', teg: 'Building' },
+            { name: 'article-full-bedroom', teg: 'Bedroom' },
+            { name: 'article-full-bedroom2', teg: 'Bedroom' }
+        ]
+    },
+    methods: {
+        getFilter(teg) {
+            if (teg === 'All') {
+                this.filter = this.articlesFull
+            } else {
+                this.filter = this.articlesFull.filter((item) => item.teg === teg)
+            }
+        }
+    }
+})

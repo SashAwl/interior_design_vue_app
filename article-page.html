@@ -7,6 +7,7 @@
     <title>Article page</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="components/component_article_full.js"></script>
 </head>
 
 <body>
@@ -25,8 +26,22 @@
             <span class="header__nav-item">Blog</span>
         </nav>
     </div>
-    <div class="top-article-page">
 
+    <div class="top-article-page"></div>
+
+    <div class="full-articles center" id="appArticles">
+        <div class="full-articles__list">
+            <component v-for="item in filter" :is="item.name" :key="item.id"></component>
+        </div>
+        <div class="full-articles__tegs">
+            <h5 class="tegs__heading">
+                Tags
+            </h5>
+            <div class="full-articles__tegs-block">
+                <button @click="getFilter(teg)" v-for="teg in tegs" :key="teg.id"
+                    class="full-articles__tegs-block-item">{{teg}}</button>
+            </div>
+        </div>
     </div>
 
     <footer class="footer center">
@@ -73,6 +88,8 @@
             </ul>
         </div>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 
 </html>
