@@ -38,8 +38,8 @@
                 Tags
             </h5>
             <div class="full-articles__tegs-block">
-                <button @click="getFilter(teg)" v-for="teg in tegs" :key="teg.id"
-                    class="full-articles__tegs-block-item">{{teg}}</button>
+                <button @click="getFilter(teg)" v-for="teg in tegs" :key="teg.id" class='full-articles__tegs-block-item'
+                    :class="{'checked-teg' : teg.tegChecked}">{{teg.name}}</button>
             </div>
         </div>
     </div>

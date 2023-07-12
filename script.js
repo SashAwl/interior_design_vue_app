@@ -23,7 +23,14 @@ const appArticles = new Vue({
             { name: 'article-full-bedroom', teg: 'Bedroom' },
             { name: 'article-full-bedroom2', teg: 'Bedroom' }
         ],
-        tegs: ['Kitchen', 'Bedroom', 'Building', 'Architecture', 'Kitchen Planning', 'All'],
+        tegs: [
+            { name: 'Kitchen', tegChecked: false },
+            { name: 'Building', tegChecked: false },
+            { name: 'Architecture', tegChecked: false },
+            { name: 'Bedroom', tegChecked: false },
+            { name: 'Kitchen Planning', tegChecked: false },
+            { name: 'All', tegChecked: false },
+        ],
         filter: [
             { name: 'article-full-kitchen', teg: 'Kitchen' },
             { name: 'article-full-planning-kitchen', teg: 'Kitchen Planning' },
@@ -35,10 +42,12 @@ const appArticles = new Vue({
     },
     methods: {
         getFilter(teg) {
-            if (teg === 'All') {
+            this.tegs.forEach(itemTeg => { itemTeg.tegChecked = false });
+            teg.tegChecked = true;
+            if (teg.name === 'All') {
                 this.filter = this.articlesFull
             } else {
-                this.filter = this.articlesFull.filter((item) => item.teg === teg)
+                this.filter = this.articlesFull.filter((item) => item.teg === teg.name)
             }
         }
     }

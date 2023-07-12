@@ -582,7 +582,8 @@
   cursor: pointer;
 }
 
-.full-articles .full-articles__tegs .cheked-teg {
+.full-articles .full-articles__tegs .checked-teg {
   background-color: #292F36;
+  color: #FFF;
 }
 /*# sourceMappingURL=style.css.map */
