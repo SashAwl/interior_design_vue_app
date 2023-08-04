@@ -1,5 +1,5 @@
 <template>
-    <div class="header center">
+    <div class="header">
         <div class="header__logo">
             <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -25,10 +25,6 @@ export default {
 <style scoped lang="scss">
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Jost:wght@100;400&display=swap');
 @import "../assets/_variables";
-.center {
-    padding-left: calc(50% - 580px);
-    padding-right: calc(50% - 580px);
-}
 .header {
     display: flex;
     justify-content: space-between;
