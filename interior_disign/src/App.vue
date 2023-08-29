@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <HeaderMenu class="center"/>
-    <TopBlock/>
-    <OurProjects @checkedButton="checkButton($event)" :tegItems="tegs" :projectItems="projects" class="center"/>
+    <!-- <PageOurProject/> -->
+    <PageProjectDetails/>
     <FooterSite class="center"/>
   </div>
 </template>
@@ -10,52 +10,19 @@
 <script>
 import HeaderMenu from './components/HeaderMenu.vue'
 import FooterSite from './components/FooterSite.vue'
-import TopBlock from './components/TopBlock.vue'
-import OurProjects from './components/OurProjects.vue'
+// import PageOurProject from './components/PageOurProject.vue'
+import PageProjectDetails from './components/PageProjectDetails.vue'
 
 export default {
   name: 'App',
   components: {
     HeaderMenu,
     FooterSite,
-    TopBlock,
-    OurProjects    
+    PageProjectDetails,
+    // PageOurProject    
   },
   data () {
-    return {
-      projects: [
-        { heading: 'Minimal Bedroom', links: [{name: 'Decor', link: '#'}, {name: 'Architecture', link: '#'}], img: '../assets/our_project/img1.1.jpg', teg: 'Bedroom'},
-        { heading: 'Minimal Bedroom', links: [{name: 'Decor', link: '#'}, {name: 'Architecture', link: '#'}], img: '../assets/our_project/img1.2.jpg', teg: 'Bedroom'},
-        { heading: 'Classical Minimal Bedroom', links: [{name: 'Decor', link: '#'}, {name: 'Architecture', link: '#'}], img: '../assets/our_project/img1.3.jpg', teg: 'Bedroom'},
-        { heading: 'Modern Bedroom', links: [{name: 'Decor', link: '#'}, {name: 'Architecture', link: '#'}], img: '../assets/our_project/img1.4.jpg', teg: 'Bedroom'},
-        { heading: 'Modern Bedroom', links: [{name: 'Decor', link: '#'}, {name: 'Architecture', link: '#'}], img: '../assets/our_project/img1.5.jpg', teg: 'Bedroom'},
-        { heading: 'Minimal Bedroom Table', links: [{name: 'Decor', link: '#'}, {name: 'Architecture', link: '#'}], img: '../assets/our_project/img1.6.jpg', teg: 'Bedroom'},
-        { heading: 'System Table', links: [{name: 'Decor', link: '#'}, {name: 'Architecture', link: '#'}], img: '../assets/our_project/img1.7.jpg', teg: 'Bedroom'},
-        { heading: 'Modern Bathroom', links: [{name: 'Decor', link: '#'}, {name: 'Architecture', link: '#'}], img: '../assets/our_project/img2.0.jpg', teg: 'Bathroom'},
-        { heading: 'Minimal Bathroom', links: [{name: 'Decor', link: '#'}, {name: 'Architecture', link: '#'}], img: '../assets/our_project/img2.1.jpg', teg: 'Bathroom'},
-        { heading: 'Minimal Bathroom', links: [{name: 'Decor', link: '#'}, {name: 'Architecture', link: '#'}], img: '../assets/our_project/img2.2.jpg', teg: 'Bathroom'},
-        { heading: 'Classical Minimal Bathroom', links: [{name: 'Decor', link: '#'}, {name: 'Architecture', link: '#'}], img: '../assets/our_project/img2.3.jpg', teg: 'Bathroom'},
-        { heading: 'Minimal Bath', links: [{name: 'Decor', link: '#'}, {name: 'Architecture', link: '#'}], img: '../assets/our_project/img2.4.jpg', teg: 'Bathroom'},
-        { heading: 'Classical Kitchen', links: [{name: 'Decor', link: '#'}, {name: 'Architecture', link: '#'}], img: '../assets/our_project/img3.1.jpg', teg: 'Kitchen'},
-        { heading: 'Minimal Kitchen', links: [{name: 'Decor', link: '#'}, {name: 'Architecture', link: '#'}], img: '../assets/our_project/img3.2.jpg', teg: 'Kitchen'},
-        { heading: 'Minimal Kitchen', links: [{name: 'Decor', link: '#'}, {name: 'Architecture', link: '#'}], img: '../assets/our_project/img3.3.jpg', teg: 'Kitchen'},
-        { heading: 'Minimal Living Room', links: [{name: 'Decor', link: '#'}, {name: 'Architecture', link: '#'}], img: '../assets/our_project/img4.1.jpg', teg: 'Living Area'},
-        { heading: 'Classical Living Room', links: [{name: 'Decor', link: '#'}, {name: 'Architecture', link: '#'}], img: '../assets/our_project/img4.2.jpg', teg: 'Living Area'},
-        { heading: 'Minimal Kitchen table', links: [{name: 'Decor', link: '#'}, {name: 'Architecture', link: '#'}], img: '../assets/our_project/img3.2.jpg', teg: 'Living Area'}
-      ],
-      tegs: [
-        {tegName: 'Bathroom', checked: false},
-        {tegName: 'Bedroom', checked: false},
-        {tegName: 'Kitchen', checked: false},
-        {tegName: 'Living Area', checked: false}
-      ]
-    }
-  },
-  methods: {
-    checkButton (index) {
-      this.tegs.forEach(item => item.checked = false)
-      this.tegs[index].checked = true
-    } 
+    return {} 
   }
 }
 </script>

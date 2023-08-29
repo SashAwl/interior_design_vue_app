@@ -1,10 +1,10 @@
 <template>
-    <div class="top-articles">
-        <div class="top-articles__text">
-            <div>Our Project</div>
+    <div class="top-articles" :style="changeBackground(topData.srcImg)">
+        <div class="top-articles__text" v-if="topData.visibility">
+            <div>{{ topData.heading }}</div>
             <div>
                 <a href="#">Home</a> /
-                <a href="#">Project </a>
+                <a href="#">{{ topData.link }}</a>
             </div>
         </div>
     </div>
@@ -12,7 +12,15 @@
 
 <script>
 export default {
-  name: 'TopBlock'
+  name: 'TopBlock',
+  props: ['topData'],
+  methods: {
+    changeBackground(img) {
+        return {
+            'background-image' : `url(${img})`
+        }
+    }
+  }
 }
 </script>
 
@@ -20,7 +28,7 @@ export default {
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Jost:wght@100;400&display=swap');
 @import "../assets/_variables";
 .top-articles {
-    background-image: url(../assets/Banner.jpg);
+    // background-image: url(../assets/Banner.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     height: 345px;
